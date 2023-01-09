@@ -14,15 +14,15 @@
             <label>Class</label>
             <select name="class">
                 <option value="" selected disabled>Select Class</option>
-         <?php
-                $conn = mysqli_connect("localhost","root","","crud") or die("connection failed!");
+                <?php
+                include 'config.php';
                 $sql = "SELECT * FROM  studentclass ";
                 $result = mysqli_query($conn, $sql) or die("query unsuccessful!");
-                while($row = mysqli_fetch_assoc($result)){
+                while ($row = mysqli_fetch_assoc($result)) {
 
-                
-         ?>
-                <option value="<?php echo $row['cid'];?>"><?php echo $row['cname'];?></option>
+
+                ?>
+                    <option value="<?php echo $row['cid']; ?>"><?php echo $row['cname']; ?></option>
                 <?php } ?>
             </select>
         </div>
@@ -30,9 +30,10 @@
             <label>Phone</label>
             <input type="text" name="sphone" />
         </div>
-        <input class="submit" type="submit" value="Save"  />
+        <input class="submit" type="submit" value="Save" />
     </form>
 </div>
 </div>
 </body>
+
 </html>
